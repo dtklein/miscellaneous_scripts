@@ -26,10 +26,11 @@ for CSS in soup.find_all("style"):
 
 outstring = '%s<html><head><title>%s</title>%s</head><body><h1>%s</h1>' % (outstring,title,outcss,title)
 
-for page in soup.find("ul", {"class": "pager"}).find_all("li", {"class": "pager-item"}):
-    found_url = page.find("a").get("href")
-    fixed_url = urlunsplit([url_bits.scheme, url_bits.netloc, found_url,"",""])
-    url_list.append(fixed_url)
+if soup.get("class") == "pager":
+    for page in soup.find("ul", {"class": "pager"}).find_all("li", {"class": "pager-item"}):
+        found_url = page.find("a").get("href")
+        fixed_url = urlunsplit([url_bits.scheme, url_bits.netloc, found_url,"",""])
+        url_list.append(fixed_url)
 
 for this_url in url_list:
     soup = BeautifulSoup(requests.get(this_url).text)
