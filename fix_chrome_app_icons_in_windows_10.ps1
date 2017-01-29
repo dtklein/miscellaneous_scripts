@@ -115,7 +115,7 @@ $ScriptBlock={
 ## It's a mix of "{ & { do_stuff } }" and single-quotes around double-quotes. This is really hideous syntax, MSFT. Please add a commandlet like "Execute-ElevatedCommand" that can be called simply and directly 
 
 
-Start-Process -Verb RunAs powershell.exe -ArgumentList "-NoExit -Command & {$ScriptBlock } -Debug" ;
+Start-Process -Verb RunAs powershell.exe -ArgumentList "-NoExit -Command & {$ScriptBlock -Chrome_Application_Directory $Chrome_Application_Directory } -Debug" ;
 
 "On line " + (Get-CurrentLineNumber) + " in file " + (Get-CurrentFileName) +" :`t" + "Going to move " + (Get-ChildItem -Path $Working_Dir).Length + " items from the " + $Working_Dir + " folder" |Write-Debug ;
 
