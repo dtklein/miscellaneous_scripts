@@ -76,36 +76,6 @@ Remove-Variable fileno ;
 
 "`r`n`r`n`r`n`r`n`r`n`r`n`r`n`r`n" |Write-Debug ;
 
-$ScriptBlock={
-    [CmdletBinding()]Param(
-        [Parameter(Mandatory=$true,Position=0)][System.String]$Chrome_Application_Directory 
-    )
-
-    function Get-CurrentLineNumber { 
-        return($MyInvocation.ScriptLineNumber) ;
-    }
-
-    function Get-CurrentFileName { 
-        return($MyInvocation.ScriptName.Split('"""\"""')[-1]) ;
-    }
-
-    '"""On line """' + (Get-CurrentLineNumber) + '""" in file """' + (Get-CurrentFileName) + '""" :`t"""' +'"""Going to fix the VisualElementsManifest in folder """' + $Chrome_Application_Directory |Write-Debug ;
-
-    [System.String]$OldPath=$Chrome_Application_Directory + '"""\chrome.VisualElementsManifest.xml"""' ;
-    '"""On line """' + (Get-CurrentLineNumber) + '""" in file """' + (Get-CurrentFileName) + '""" :`t"""' + '"""Old Path Name is: """' + $OldPath |Write-Debug ;
-    [System.String]$NewName=$Chrome_Application_Directory + '"""\chrome.VisualElementsManifest.xml."""' + $GUID ;
-    '"""On line """' + (Get-CurrentLineNumber) + '""" in file """' + (Get-CurrentFileName) + '""" :`t"""' + '"""New Name is: """' + $NewName |Write-Debug ;
-    
-    try {
-        Rename-Item -Path $OldPath -NewName $NewName ;
-        '"""On line """' + (Get-CurrentLineNumber) + '""" in file """' + (Get-CurrentFileName) + '""" :`t"""' + '"""Renaming the file """' + $OldPath + '""" to """' + $NewName |Write-Debug ;
-        Get-ItemProperty -Path $NewName |Write-Debug ;
-    } catch {
-        $Caught_Error=$Error[0].Exception.Message ;
-        Write-Error $Caught_Error ;
-    }
-}
-
 
 "On line " + (Get-CurrentLineNumber) + " in file " + (Get-CurrentFileName) +" :`t" + "Going to elevate to root so I can rename the VisualElementsManifest in folder " + $Chrome_Application_Directory |Write-Debug ;
 
@@ -113,9 +83,37 @@ $ScriptBlock={
 ## Apparently the only straightforward way (staying within powershell) to step-up rights with UAC is to use Start-Process, which is not as friendly as Invoke-Command or similar
 ## I finally got it after going round-and-round and landing on https://stackoverflow.com/questions/22544930/powershell-executing-a-function-within-a-script-block-using-start-process-does-w for the third time
 ## It's a mix of "{ & { do_stuff } }" and single-quotes around double-quotes. This is really hideous syntax, MSFT. Please add a commandlet like "Execute-ElevatedCommand" that can be called simply and directly 
+##
+## After more hours fighting with the language than I want to admit, I got it working by first constructing the whole command as a string, then Base64 encoding that string, byte-by-byte
+## Many thanks to https://stackoverflow.com/questions/6295957/using-powershell-encodedcommand-to-pass-parameters for the help; this would not have been obvious, and I had never heard of the -encodedCommand parameter before
+
+#$ConstructCommandLine="{" + $ScriptBlock + "}" ;
+#[System.String]$ConstructArg="`"" + $Chrome_Application_Directory + "`"" ;
+#
+
+[System.String]$OldPath=$Chrome_Application_Directory + "\chrome.VisualElementsManifest.xml" ;
+[System.String]$Command_To_Run_As_Root=[Convert]::ToBase64String(
+    [Text.Encoding]::Unicode.GetBytes(
+        [System.String]::Join('',@(
+            "try { Rename-Item -Path `"",
+            $OldPath.ToString(),
+            "`" -NewName chrome.VisualElementsManifest.xml.OLD } catch { Write-Error ",
+            "`"$Error[0].Exception.Message`"",
+            '}'
+        ))
+    )
+) ;
+
+"On line " + (Get-CurrentLineNumber) + " in file " + (Get-CurrentFileName) +" :`t" + "Going to run the commands:`r`n" + $Command_To_Run_As_Root +"`r`n`r`n" |Write-Debug ;
 
 
-Start-Process -Verb RunAs powershell.exe -ArgumentList "-NoExit -Command & {$ScriptBlock -Chrome_Application_Directory $Chrome_Application_Directory } -Debug" ;
+Start-Process `
+    -Verb RunAs `
+    (Get-Command powershell.exe).Definition `
+    -ArgumentList " -NoExit"," -ExecutionPolicy Unrestricted"," -encodedCommand",$Command_To_Run_As_Root ;
+
+"On line " + (Get-CurrentLineNumber) + " in file " + (Get-CurrentFileName) +" :`t" + (Get-ChildItem -Path $Chrome_Application_Directory -Filter "*VisualElementsManifest*").Name + " in the the " + $Chrome_Application_Directory + " folder" |Write-Debug ;
+
 
 "On line " + (Get-CurrentLineNumber) + " in file " + (Get-CurrentFileName) +" :`t" + "Going to move " + (Get-ChildItem -Path $Working_Dir).Length + " items from the " + $Working_Dir + " folder" |Write-Debug ;
 
