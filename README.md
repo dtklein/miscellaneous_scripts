@@ -6,6 +6,7 @@
   - program_codename_generator.ps1 -- A funny tool that creates program code names, based on the patterns of code names from the documents stolen by Edward Snowden and created to troll my team mates after the Shadow Broker Group attempted to sell a suite of TAO tools allegedly found abandoned on a C&C server operated by the so-call Equation Group
   - fix_chrome_app_icons_in_windows_10.ps1 -- A tool to unbreak the Windows metro icons in the wide section of the Windows 10 flag-menu for Chrome apps
   - java_don't_bring_unwanted_plus_one_to_my_party.ps1 -- A tool to inform java not to offer to install sponsor applications, bloat, undesired cruft, etc whenever you install / upgrade
+  - Network_Configs.ps1 -- A tool to send you your network configuration as a JSON struct
 
 
 (c) DTK
