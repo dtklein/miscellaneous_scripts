@@ -1,0 +1,23 @@
+Package: microsoft-office-online
+Architecture: all
+Version: 0:0.1
+Maintainer: David T. Klein <David.Klein@hush.com>
+Description: This package delivers launchers for the Microsoft Office online applications (office.live.com, onenote.com, etc)
+ .
+ This contains launchers for the following applications:
+ .
+  Microsoft Office Word
+  Microsoft Office Excel
+  Microsoft Office PowerPoint
+  Microsoft Office OneNote
+  Microsoft Office Sway
+  Microsoft Outlook:
+   - Email
+   - People
+   - Calendar
+   - Tasks
+  Microsoft OneDrive
+  Microsoft Skype
+  Microsoft Flow
+ .
+
