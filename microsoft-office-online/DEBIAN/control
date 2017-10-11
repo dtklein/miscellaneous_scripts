@@ -1,6 +1,6 @@
 Package: microsoft-office-online
 Architecture: all
-Version: 0:0.1
+Version: 0:0.2
 Maintainer: David T. Klein <David.Klein@hush.com>
 Description: This package delivers launchers for the Microsoft Office online applications (office.live.com, onenote.com, etc)
  .

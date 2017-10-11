@@ -1,6 +1,6 @@
 [Desktop Entry]
 Type=Application
-Exec=/usr/bin/x-www-browser "https://people.live.com/"
+Exec=/usr/bin/x-www-browser --new-window "https://people.live.com/"
 GenericName=Microsoft Outlook People
 Comment[en_US]=Microsoft Outlook People
 Icon=/usr/share/icons/Outlook_People.PNG

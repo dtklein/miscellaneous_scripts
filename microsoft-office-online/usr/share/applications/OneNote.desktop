@@ -1,6 +1,6 @@
 [Desktop Entry]
 Type=Application
-Exec=/usr/bin/x-www-browser "https://www.onenote.com/notebooks"
+Exec=/usr/bin/x-www-browser --new-window "https://www.onenote.com/notebooks"
 GenericName=Microsoft OneNote
 Comment[en_US]=Microsoft OneNote
 Icon=/usr/share/icons/OneNote.PNG

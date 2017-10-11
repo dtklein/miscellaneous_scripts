@@ -1,6 +1,6 @@
 [Desktop Entry]
 Type=Application
-Exec=/usr/bin/x-www-browser "https://flow.microsoft.com/manage/"
+Exec=/usr/bin/x-www-browser --new-window "https://flow.microsoft.com/manage/"
 GenericName=Microsoft Office Workflows
 Comment[en_US]=Microsoft Office Workflows
 Icon=/usr/share/icons/Flow.PNG
