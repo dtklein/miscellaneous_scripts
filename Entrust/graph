@@ -1,0 +1,4 @@
+digraph entrust_trust_web {
+	layout="dot"
+	rankdir="BT"
+}
