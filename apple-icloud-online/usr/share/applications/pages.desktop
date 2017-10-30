@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Exec=/usr/bin/x-www-browser --new-window "https://www.icloud.com/#pages"
+GenericName=Apple iCloud Pages
+Comment[en_US]=Apple iCloud Pages
+Icon=/usr/share/icons/pages.PNG
+Categories=Apple iCloud
+Name=Apple iCloud Pages

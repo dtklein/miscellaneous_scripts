@@ -4,5 +4,5 @@ Exec=/usr/bin/x-www-browser --new-window "https://outlook.com/"
 GenericName=Microsoft Office Mail
 Comment[en_US]=Microsoft Outlook Mail
 Icon=/usr/share/icons/Outlook_Mail.PNG
-Categories=Office
+Categories=Microsoft Office Online
 Name=Microsoft Office Mail

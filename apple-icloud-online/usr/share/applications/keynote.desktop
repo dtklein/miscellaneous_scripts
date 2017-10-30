@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Exec=/usr/bin/x-www-browser --new-window "https://www.icloud.com/#keynote"
+GenericName=Apple iCloud Keynote
+Comment[en_US]=Apple iCloud Keynote
+Icon=/usr/share/icons/keynote.PNG
+Categories=Apple iCloud
+Name=Apple iCloud Keynote

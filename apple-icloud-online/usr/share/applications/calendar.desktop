@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Exec=/usr/bin/x-www-browser --new-window "https://www.icloud.com/#calendar"
+GenericName=Apple iCloud Calendar
+Comment[en_US]=Apple iCloud Calendar
+Icon=/usr/share/icons/calendar.PNG
+Categories=Apple iCloud
+Name=Apple iCloud Calendar

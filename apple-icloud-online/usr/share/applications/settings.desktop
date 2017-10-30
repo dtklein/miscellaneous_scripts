@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Exec=/usr/bin/x-www-browser --new-window "https://www.icloud.com/#settings"
+GenericName=Apple iCloud Settings
+Comment[en_US]=Apple iCloud Settings
+Icon=/usr/share/icons/settings.PNG
+Categories=Apple iCloud
+Name=Apple iCloud Settings

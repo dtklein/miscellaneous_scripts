@@ -4,5 +4,5 @@ Exec=/usr/bin/x-www-browser --new-window "https://office.live.com/start/word.asp
 GenericName=Microsoft Word
 Comment[en_US]=Microsoft Word
 Icon=/usr/share/icons/Word.PNG
-Categories=Office
+Categories=Microsoft Office Online
 Name=Microsoft Office Word

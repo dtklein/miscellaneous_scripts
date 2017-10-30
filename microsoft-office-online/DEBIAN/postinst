@@ -1,40 +1,13 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
-export ErrorString='' ;
+MENU="/usr/share/desktop-directories/lxde-microsoft-office-online.directory" ;
 
-for FILE in Calendar Excel Flow Mail OneDrive OneNote People PowerPoint Skype  Sway Tasks Word ; do
-	[[ -a /usr/share/applications/${FILE}.desktop ]] && {
-		[[ "$(stat -c '%U' /usr/share/applications/${FILE}.desktop)" != "root" ]] && {
-			chown root "/usr/share/applications/${FILE}.desktop" ;
-		}
-		[[ "$(stat -c '%G' /usr/share/applications/${FILE}.desktop)" != "root" ]] && {
-			chgrp root "/usr/share/applications/${FILE}.desktop" ;
-		}
-		[[ "$(stat -c '%a' /usr/share/applications/${FILE}.desktop)" -ne 644 ]] && {
-			chmod 644 "/usr/share/applications/${FILE}.desktop" ;
-		}
-	} || {
-		$ErrorString="$ErrorString\nCould not find /usr/share/applications/${FILE}.desktop" ;
-	}
+for NAME in Calendar Excel Flow Mail OneDrive OneNote People PowerPoint Skype Sway Tasks Word ; do
+	FILE="/usr/share/applications/${NAME}.desktop" ;
+	xdg-desktop-menu \
+		install \
+		--novendor  \
+		${MENU} \
+		${FILE} ;
 done
-for FILE in Excel Flow OneDrive OneNote Outlook_Calendar Outlook_Mail Outlook_People PowerPoint Skype Sway Tasks Word ; do
-	[[ -a /usr/share/icons/${FILE}.PNG ]] && {
-		[[ "$(stat -c '%U' /usr/share/icons/${FILE}.PNG)" != "root" ]] && {
-			chown root "/usr/share/icons/${FILE}.PNG" ;
-		}
-		[[ "$(stat -c '%G' /usr/share/icons/${FILE}.PNG)" != "root" ]] && {
-			chgrp root "/usr/share/icons/${FILE}.PNG" ;
-		}
-		[[ "$(stat -c '%a' /usr/share/icons/${FILE}.PNG)" -ne 644 ]] && {
-			chmod 644 "/usr/share/icons/${FILE}.PNG" ;
-		}
-	} || {
-		$ErrorString="$ErrorString\nCould not find /usr/share/icons/${FILE}.PNG" ;
-	}
-done
-#[[ $ErrorString != '' ]] && {
-#	printf $ErrorString >&2 ;
-#	#exit 1 ;
-#}
-
 

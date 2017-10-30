@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Exec=/usr/bin/x-www-browser --new-window "https://www.icloud.com/#contacts"
+GenericName=Apple iCloud Contacts
+Comment[en_US]=Apple iCloud Contacts
+Icon=/usr/share/icons/contacts.PNG
+Categories=Apple iCloud
+Name=Apple iCloud Contacts

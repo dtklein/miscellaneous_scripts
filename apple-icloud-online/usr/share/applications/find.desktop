@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Exec=/usr/bin/x-www-browser --new-window "https://www.icloud.com/#find"
+GenericName=Apple iCloud Find My IPhone
+Comment[en_US]=Apple iCloud Find My IPhone
+Icon=/usr/share/icons/find.PNG
+Categories=Apple iCloud
+Name=Apple iCloud Find My IPhone

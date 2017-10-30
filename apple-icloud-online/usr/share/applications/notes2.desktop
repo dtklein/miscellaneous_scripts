@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Exec=/usr/bin/x-www-browser --new-window "https://www.icloud.com/#notes2"
+GenericName=Apple iCloud Notes
+Comment[en_US]=Apple iCloud Notes
+Icon=/usr/share/icons/notes2.PNG
+Categories=Apple iCloud
+Name=Apple iCloud Notes

@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Exec=/usr/bin/x-www-browser --new-window "https://www.icloud.com/#photos"
+GenericName=Apple iCloud Photos
+Comment[en_US]=Apple iCloud Photos
+Icon=/usr/share/icons/photos.PNG
+Categories=Apple iCloud
+Name=Apple iCloud Photos

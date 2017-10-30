@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Exec=/usr/bin/x-www-browser --new-window "https://www.icloud.com/#iclouddrive"
+GenericName=Apple iCloud Drive
+Comment[en_US]=Apple iCloud Drive
+Icon=/usr/share/icons/iclouddrive.PNG
+Categories=Apple iCloud
+Name=Apple iCloud Drive

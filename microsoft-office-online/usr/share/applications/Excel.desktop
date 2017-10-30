@@ -4,5 +4,5 @@ Exec=/usr/bin/x-www-browser --new-window "https://office.live.com/start/excel.as
 GenericName=Microsoft Excel
 Comment[en_US]=Microsoft Excel
 Icon=/usr/share/icons/Excel.PNG
-Categories=Office
+Categories=Microsoft Office Online
 Name=Microsoft Office Excel

@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Exec=/usr/bin/x-www-browser --new-window "https://www.icloud.com/#reminders"
+GenericName=Apple iCloud Reminders
+Comment[en_US]=Apple iCloud Reminders
+Icon=/usr/share/icons/reminders.PNG
+Categories=Apple iCloud
+Name=Apple iCloud Reminders

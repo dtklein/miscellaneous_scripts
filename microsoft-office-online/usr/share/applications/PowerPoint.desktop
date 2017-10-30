@@ -4,5 +4,5 @@ Exec=/usr/bin/x-www-browser --new-window "https://office.live.com/start/powerpoi
 GenericName=Microsoft PowerPoint
 Comment[en_US]=Microsoft PowerPoint
 Icon=/usr/share/icons/PowerPoint.PNG
-Categories=Office
+Categories=Microsoft Office Online
 Name=Microsoft Office PowerPoint

@@ -4,5 +4,5 @@ Exec=/usr/bin/x-www-browser --new-window "https://calendar.live.com/?rru=tasks"
 GenericName=Microsoft Office Tasks
 Comment[en_US]=Microsoft Office Tasks
 Icon=/usr/share/icons/Tasks.PNG
-Categories=Office
+Categories=Microsoft Office Online
 Name=Microsoft Office Tasks

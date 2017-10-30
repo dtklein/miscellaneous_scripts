@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Exec=/usr/bin/x-www-browser --new-window "https://www.icloud.com/#mail"
+GenericName=Apple iCloud Mail
+Comment[en_US]=Apple iCloud Mail
+Icon=/usr/share/icons/mail.PNG
+Categories=Apple iCloud
+Name=Apple iCloud Mail

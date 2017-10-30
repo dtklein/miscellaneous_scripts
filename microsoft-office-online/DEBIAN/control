@@ -1,6 +1,7 @@
 Package: microsoft-office-online
 Architecture: all
-Version: 0:0.2
+Depends: www-browser | gnome-www-browser | google-chrome-stable | chromium-browser | firefox | iceweasel
+Version: 0:0.3
 Maintainer: David T. Klein <David.Klein@hush.com>
 Description: This package delivers launchers for the Microsoft Office online applications (office.live.com, onenote.com, etc)
  .

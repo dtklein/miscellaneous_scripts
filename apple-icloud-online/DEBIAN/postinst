@@ -1,0 +1,14 @@
+#!/bin/bash
+
+MENU="/usr/share/desktop-directories/lxde-apple-icloud-online.directory" ;
+
+for NAME in "calendar" "contacts" "find" "fmf" "iclouddrive" "keynote" "mail" "notes2" "numbers" "pages" "photos" "reminders" "settings" ; do
+	FILE="/usr/share/applications/${NAME}.desktop" ;
+	xdg-desktop-menu \
+		install \
+		--novendor  \
+		${MENU} \
+		${FILE} ;
+done
+
+

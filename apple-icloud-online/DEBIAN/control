@@ -1,0 +1,7 @@
+Package: apple-icloud-online
+Architecture: all
+Depends: www-browser | gnome-www-browser | google-chrome-stable | chromium-browser | firefox | iceweasel
+Version: 0:0.1
+Maintainer: David T. Klein <David.Klein@hush.com>
+Description: This package delivers launchers for the Apple iCloud applications (Pages, Keynote, Find My IPhone, etc)
+

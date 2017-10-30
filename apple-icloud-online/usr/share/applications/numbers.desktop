@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Exec=/usr/bin/x-www-browser --new-window "https://www.icloud.com/#numbers"
+GenericName=Apple iCloud Numbers
+Comment[en_US]=Apple iCloud Numbers
+Icon=/usr/share/icons/numbers.PNG
+Categories=Apple iCloud
+Name=Apple iCloud Numbers

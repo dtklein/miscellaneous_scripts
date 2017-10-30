@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Exec=/usr/bin/x-www-browser --new-window "https://www.icloud.com/#fmf"
+GenericName=Apple iCloud Find My Friends
+Comment[en_US]=Apple iCloud Find My Friends
+Icon=/usr/share/icons/fmf.PNG
+Categories=Apple iCloud
+Name=Apple iCloud Find My Friends
