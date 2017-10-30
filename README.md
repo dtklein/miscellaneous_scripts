@@ -10,7 +10,7 @@
   - microsoft-office-online -- The files and scripts needed to add launchers for the Microsoft Office Online tools into the menu for Ubuntu or Debian, so you can easily access the office.live.com and outlook.com tools as easily as local applications
     - Note, to build this, issue the command *dpkg-deb --build ./microsoft-office-online/* in the parent folder of this
     - Note, I have tested on Ubuntu 16.04, with Gnome, Gnome-Classic, LXDE, LXDE-Netbook, XFCE, Unity. When I tried on KDE (Plasma Desktop), I got launchers, but not the icons (even though the edit this application showed the colorful icons)
-
+  - apple-icloud-online -- Creates launchers from the LXDE / Gnome / whatever applications menu for the Apple iCloud applications
 
 (c) DTK
 
