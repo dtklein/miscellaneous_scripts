@@ -7,6 +7,9 @@
   - fix_chrome_app_icons_in_windows_10.ps1 -- A tool to unbreak the Windows metro icons in the wide section of the Windows 10 flag-menu for Chrome apps
   - java_don't_bring_unwanted_plus_one_to_my_party.ps1 -- A tool to inform java not to offer to install sponsor applications, bloat, undesired cruft, etc whenever you install / upgrade
   - Network_Configs.ps1 -- A tool to send you your network configuration as a JSON struct
+  - microsoft-office-online -- The files and scripts needed to add launchers for the Microsoft Office Online tools into the menu for Ubuntu or Debian, so you can easily access the office.live.com and outlook.com tools as easily as local applications
+    - Note, to build this, issue the command *dpkg-deb --build ./microsoft-office-online/* in the parent folder of this
+    - Note, I have tested on Ubuntu 16.04, with Gnome, Gnome-Classic, LXDE, LXDE-Netbook, XFCE, Unity. When I tried on KDE (Plasma Desktop), I got launchers, but not the icons (even though the edit this application showed the colorful icons)
 
 
 (c) DTK
